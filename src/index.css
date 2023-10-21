@@ -100,9 +100,7 @@ a {
 
 .movie-image {
   width: 100%;
-  height: auto;
   display: block;
-  height: 220px;
 }
 
 .movie-title {

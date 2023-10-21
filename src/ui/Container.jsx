@@ -21,7 +21,8 @@ function Container({
                 src={
                   movie.backdrop_path
                     ? `https://image.tmdb.org/t/p/w400${movie.backdrop_path}`
-                    : `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                    : // : `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                      "https://via.placeholder.com/400x225.png?text=Image+Not+Found"
                 }
                 alt={movie.title || movie.name}
                 className="movie-image"
