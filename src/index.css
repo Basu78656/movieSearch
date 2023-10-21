@@ -16,7 +16,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;/
+  z-index: 10;
 }
 
 /* Logo */
@@ -59,7 +59,8 @@ body {
   .search {
     width: 200px;
   }
-  .movie-card .movie-title , .movie-rating {
+  .movie-card .movie-title,
+  .movie-rating {
     font-size: 0.8rem;
   }
 }
@@ -155,7 +156,7 @@ a {
   margin: 200px auto;
 }
 
-.search_link{
+.search_link {
   color: white;
   font-size: 1.1rem;
   border-bottom: 1px solid white;
@@ -164,7 +165,7 @@ a {
   cursor: text;
   display: block;
 }
-.search_link:hover{
+.search_link:hover {
   color: #f9f7f7;
   letter-spacing: 3px;
   border-bottom: 1.4px solid rgb(238, 232, 232);
