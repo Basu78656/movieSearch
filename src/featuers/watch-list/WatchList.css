@@ -1,0 +1,80 @@
+.main_watchlsit {
+  /* height: 100vh; */
+}
+/* WatchList.css */
+
+.watchlist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.main-watchlist {
+  padding: 20px;
+}
+
+.watchlist-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.watchlist-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.watchlist-card img {
+  width: 250px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 21px;
+}
+
+.movie-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff3c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.empty {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .watchlist-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .watchlist-card img {
+    width: 150px;
+    height: 200px;
+  }
+  .movie-name {
+    font-size: 0.8rem;
+  }
+}

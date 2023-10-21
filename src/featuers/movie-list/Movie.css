@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Jost:wght@500&family=Lora:ital,wght@1,500&family=Mooli&family=Poppins&family=Ruwudu:wght@500;700&display=swap");
+.movie-bodys {
+  display: flex;
+  /* border: 4px solid black; */
+}
+
+.movie-container {
+  width: 1200px;
+  margin: 20px auto;
+}
+
+.movie-posters img {
+  width: 400px;
+}
+.movie-infos {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.295);
+  color: #fff;
+  text-align: left;
+  position: relative;
+}
+
+.movie-infos p {
+  margin-left: 20px;
+}
+.movie-infos h1,
+.cast {
+  text-align: center;
+  font-family: "Ruwudu", serif;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+  border-bottom: 1.4px solid rgb(227, 221, 211);
+}
+.cast {
+  color: white;
+  font-size: 1.7rem;
+  font-family: "Ruwudu", serif;
+}
+.gener,
+.release_date,
+.p_span {
+  font-size: larger;
+  letter-spacing: 1.4px;
+  font-family: "Lora", serif;
+}
+
+.overview {
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  letter-spacing: 1.5px;
+  border-bottom: 1.4px solid rgb(227, 221, 211);
+  padding: 7px;
+}
+.rating,
+.runtime {
+  border-bottom: 1.4px solid rgb(227, 221, 211);
+  font-size: 16px;
+  padding: 7px;
+  color: #fff;
+  letter-spacing: 1.2px;
+}
+
+.rating span {
+  background-color: gold;
+  border-radius: 10px;
+  font-size: 14px;
+  color: black;
+  padding: 5px;
+}
+.main_card_container {
+  overflow-x: scroll;
+  scrollbar-color: #d5ac68 #f1db9d;
+  scrollbar-width: thin;
+  margin-top: 20px;
+}
+.main_card_container h1 {
+  text-align: center;
+  color: whitesmoke;
+}
+.main_card_container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.main_card_container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.main_card_container::-webkit-scrollbar-thumb {
+  height: 5px;
+  background-color: #d5ac68;
+}
+
+.main_card_container::-webkit-scrollbar-thumb:hover {
+  background-color: #f1db9d;
+}
+
+.main_card_container::-webkit-scrollbar:vertical {
+  display: none;
+}
+.card_container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.profile_card img {
+  height: 300px;
+  width: 200px;
+  border-radius: 10px;
+}
+.profile_card {
+  margin: 50px;
+  /* overflow: hidden; */
+}
+.profile_card:hover {
+  cursor: pointer;
+}
+.intro {
+  width: 200px;
+  padding: 6px;
+  box-sizing: border-box;
+  position: absolute;
+  background: rgb(27, 27, 27, 0.5);
+  position: absolute;
+  bottom: 54px;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 0;
+}
+.intro h2 {
+  margin: 10px;
+  font-size: 1.1rem;
+  /* visibility: hidden;
+  opacity: 0; */
+}
+
+@media (max-width: 767px) {
+  .movie-bodys {
+    display: flex;
+    /* flex-direction: column; */
+    margin: 0;
+    width: 100%;
+  }
+  .movie-posters img {
+  }
+  .movie-infos {
+  }
+  .card_container {
+    display: flex;
+    /* flex-direction: column; */
+  }
+}
+.movie_infos_button {
+  text-align: center;
+  margin-top: 90px;
+}
+.movie_infos_button button {
+  margin-right: 10px;
+  background: rgb(227, 94, 46);
+  padding: 10px;
+  border: none;
+  font-size: 0.9rem;
+  color: rgb(246, 231, 231);
+  font-weight: 600;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.movie_infos_button button:hover {
+  background: rgb(236, 81, 25);
+  padding: 11px;
+}
+/*
+font-family: 'Bricolage Grotesque', sans-serif;
+font-family: 'Jost', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Mooli', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Ruwudu', serif; */

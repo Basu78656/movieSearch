@@ -1,0 +1,31 @@
+/* Pagination.css */
+
+.pagination-container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  list-style: none;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+.pagination-container ul li {
+  margin-right: 10px;
+}
+.pagination-container ul li button {
+  background-color: rgb(172, 94, 245);
+  padding: 20px 10px;
+  border-radius: 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pagination-container ul li button:hover {
+  background-color: blueviolet;
+  padding: 23px 10px;
+}
