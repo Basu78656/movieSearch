@@ -25,7 +25,7 @@ function AppLayout() {
       <div className="main">
         <nav className="nav">
           <Link className="logo" to={"/"}>
-            Movie Search
+            MovieSearch
           </Link>
           <div className="search">
             <input
