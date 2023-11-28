@@ -50,7 +50,10 @@ function ThrillerAndCrime() {
           setLastLoadedMovieId(
             filteredDataByGener[filteredDataByGener.length - 1].id
           );
-          setMovieData((prevMovies) => [...prevMovies, ...filteredDataByGener]);
+          setMovieData((prevMovies) => [
+            ...(prevMovies || []),
+            ...filteredDataByGener,
+          ]);
           setPage((prevPage) => prevPage + 1);
         }
       }
@@ -66,7 +69,7 @@ function ThrillerAndCrime() {
     fetchMovies();
   }, [page, query.length]);
 
-  if (movieData.length === 0)
+  if (!movieData)
     return (
       <h1
         style={{

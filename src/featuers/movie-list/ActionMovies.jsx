@@ -32,13 +32,13 @@ function ActionMovies() {
 
       const response = await getAllMovieData(page);
 
-      if (query.length > 2) {
+      if (query.length > 3) {
         setMovieData(data.results);
         setPage(1);
       } else {
         // Filter and append data, skipping duplicates
         const filteredData = response.results.filter(
-          (movie) => movie.id !== lastLoadedMovieId
+          (movie) => movie?.id !== lastLoadedMovieId
         );
 
         if (filteredData.length === 0) {
@@ -50,7 +50,10 @@ function ActionMovies() {
           setLastLoadedMovieId(
             filteredDataByGener[filteredDataByGener.length - 1].id
           );
-          setMovieData((prevMovies) => [...prevMovies, ...filteredDataByGener]);
+          setMovieData((prevMovies) => [
+            ...(prevMovies || []),
+            ...filteredDataByGener,
+          ]);
           setPage((prevPage) => prevPage + 1);
         }
       }
@@ -69,7 +72,7 @@ function ActionMovies() {
   {
     if (navigation.state === "loading") return <Loading />;
   }
-  if (movieData.length === 0)
+  if (!movieData)
     return (
       <h1
         style={{
@@ -86,7 +89,7 @@ function ActionMovies() {
     );
   return (
     <InfiniteScroll
-      dataLength={movieData.length}
+      dataLength={movieData?.length}
       next={fetchMovies}
       hasMore={!noMoreMovies}
       loader={<Loading />} // You can customize the loader component

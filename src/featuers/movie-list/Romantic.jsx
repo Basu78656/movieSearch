@@ -11,6 +11,7 @@ import {
   useNavigation,
   useOutletContext,
 } from "react-router-dom";
+import { useCallback } from "react";
 
 function Romantic() {
   const { results: initialMovies } = useLoaderData();
@@ -24,7 +25,7 @@ function Romantic() {
   const [noMoreMovies, setNoMoreMovies] = useState(false);
   const navigation = useNavigation();
 
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     try {
       if (loadingRef.current || noMoreMovies) return;
 
@@ -53,7 +54,11 @@ function Romantic() {
           setLastLoadedMovieId(
             filteredDataByGener[filteredDataByGener.length - 1].id
           );
-          setMovieData((prevMovies) => [...prevMovies, ...filteredDataByGener]);
+          setMovieData((prevMovies) => [
+            ...(prevMovies || []),
+            ...filteredDataByGener,
+          ]);
+
           setPage((prevPage) => prevPage + 1);
         }
       }
@@ -63,13 +68,13 @@ function Romantic() {
       console.error(error);
       loadingRef.current = false;
     }
-  };
+  }, [page, query, data.results, lastLoadedMovieId, noMoreMovies]);
 
   useEffect(() => {
     fetchMovies();
-  }, [page, query.length]);
+  }, [page, query, fetchMovies]);
 
-  if (movieData.length === 0)
+  if (!movieData)
     return (
       <h1
         style={{

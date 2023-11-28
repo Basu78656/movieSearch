@@ -15,8 +15,8 @@ function WatchList() {
         <div className="main-watchlist">
           <div className="watchlist-items">
             {movies.map((movie) => (
-              <Link to={`/moviePreview/${movie.id}`} key={movie.id}>
-                <div className="watchlist-card">
+              <div className="watchlist-card" key={movie.id}>
+                <Link to={`/moviePreview/${movie.id}`}>
                   <img
                     src={
                       movie.backdrop_path
@@ -25,15 +25,15 @@ function WatchList() {
                     }
                     alt={movie.name}
                   />
-                  <p className="movie-name">{movie.name}</p>
-                  <button
-                    className="remove-button"
-                    onClick={() => dispatch(removeMovie(movie.id))}
-                  >
-                    X
-                  </button>
-                </div>
-              </Link>
+                </Link>
+                <p className="movie-name">{movie.name}</p>
+                <button
+                  className="remove-button"
+                  onClick={() => dispatch(removeMovie(movie.id))}
+                >
+                  X
+                </button>
+              </div>
             ))}
           </div>
         </div>

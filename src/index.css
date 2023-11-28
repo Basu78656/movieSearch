@@ -91,10 +91,8 @@ a {
 
 @media (max-width: 768px) {
   .grid-movie-container {
-    grid-template-columns: repeat(
-      1,
-      1fr
-    ); /* Display one card per row on smaller screens */
+    grid-template-columns: 1fr 1fr;
+    /* Display one card per row on smaller screens */
   }
 }
 

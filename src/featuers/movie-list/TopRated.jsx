@@ -37,7 +37,7 @@ function TopRated() {
     fetchData();
   }, [state, data.results, query.length]);
 
-  if (movieData.length === 0)
+  if (movieData?.length === 0)
     return (
       <h1
         style={{
@@ -68,7 +68,11 @@ function TopRated() {
             handleAddWatchList={handleAddWatchList}
             addMovies={addMovies}
           />
-          <Pagination setState={setState} state={state} />
+          {movieData?.length >= 20 ? (
+            <Pagination setState={setState} state={state} />
+          ) : (
+            ""
+          )}
         </>
       )}
     </>

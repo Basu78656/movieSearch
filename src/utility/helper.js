@@ -1,6 +1,11 @@
 // Define the checkIn function within the component
 export const checkIn = (id, watchList) => {
-  const isDuplicate = watchList.some((item) => item.id === id);
+  const watchListClone = [...watchList];
+  const isDuplicate = watchListClone.some((item) => item.id === id);
+  if (!isDuplicate) {
+    watchListClone.push({ id });
+    localStorage.setItem("watchlist", JSON.stringify(watchList));
+  }
   return isDuplicate;
 };
 
@@ -17,6 +22,15 @@ export function handleAddWatchList(
     name,
   };
   dispatch(addMovies(item));
+
+  // Fetch the current watchlist data from local storage
+  const watchListData = localStorage.getItem("watchlist");
+  let watchList = [];
+  if (watchListData) {
+    watchList = JSON.parse(watchListData);
+  }
+  // Call checkIn to update the watchlist and save it to local storage
+  checkIn(id, watchList);
 }
 
 export function filterData(array, genreIdsToFilter) {

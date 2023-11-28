@@ -138,12 +138,12 @@
 
 @media (max-width: 767px) {
   .movie-bodys {
-    display: flex;
-    /* flex-direction: column; */
-    margin: 0;
-    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
   }
   .movie-posters img {
+    width: 50%;
+    margin: auto;
   }
   .movie-infos {
   }
